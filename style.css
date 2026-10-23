@@ -655,6 +655,152 @@
   
   }
 
+
+
+/* お問い合わせフォーム */
+
+.contact-section {
+
+  padding: 80px 20px;
+
+  background-color: #f5f0e9;
+
+  color: #51443b;
+
+}
+
+.contact-section .section-inner {
+
+  max-width: 700px;
+
+  margin: 0 auto;
+
+}
+
+.contact-section .section-label {
+
+  margin-bottom: 12px;
+
+  font-size: 14px;
+
+  letter-spacing: 0.2em;
+
+}
+
+.contact-section h2 {
+
+  margin-bottom: 20px;
+
+  font-size: 32px;
+
+  font-weight: 500;
+
+}
+
+.contact-description {
+
+  margin-bottom: 35px;
+
+  line-height: 1.8;
+
+}
+
+#contact-form .form-group {
+
+  margin-bottom: 24px;
+
+}
+
+#contact-form label {
+
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+}
+
+#contact-form input,
+
+#contact-form textarea {
+
+  display: block;
+
+  width: 100%;
+
+  padding: 14px;
+
+  border: 1px solid #d6c9ba;
+
+  border-radius: 4px;
+
+  background-color: #fffdf9;
+
+  color: #51443b;
+
+  font: inherit;
+
+  box-sizing: border-box;
+
+}
+
+#contact-form input:focus,
+
+#contact-form textarea:focus {
+
+  outline: 2px solid #a58a70;
+
+  outline-offset: 2px;
+
+}
+
+#contact-form textarea {
+
+  resize: vertical;
+
+}
+
+.contact-button {
+
+  display: block;
+
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background-color: #80654f;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+
+}
+
+.contact-button:hover {
+
+  background-color: #634b38;
+
+}
+
+#form-status {
+
+  margin-top: 16px;
+
+  line-height: 1.7;
+
+}
+
   /* スマートフォン対応 */
   
   @media (max-width: 768px) {
