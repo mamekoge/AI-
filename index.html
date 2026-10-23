@@ -484,6 +484,91 @@
 
 </section>
 
+
+
+<script>
+
+  const GAS_URL = "https://script.google.com/macros/s/AKfycbwcWdCh1eMwZ8YFEYHj65OLzqnWESmrsHMSuN06syJ99W9vxwngfXciZfaw9fex16OG/exec";
+
+  const contactForm = document.getElementById("contact-form");
+
+  const formStatus = document.getElementById("form-status");
+
+  contactForm.addEventListener("submit", async function (event) {
+
+    event.preventDefault();
+
+    const submitButton = contactForm.querySelector(
+
+      'button[type="submit"]'
+
+    );
+
+    const formData = {
+
+      name: document.getElementById("name").value.trim(),
+
+      email: document.getElementById("email").value.trim(),
+
+      message: document.getElementById("message").value.trim()
+
+    };
+
+    if (!formData.name || !formData.email || !formData.message) {
+
+      formStatus.textContent = "すべての項目を入力してください。";
+
+      return;
+
+    }
+
+    submitButton.disabled = true;
+
+    submitButton.textContent = "送信中...";
+
+    formStatus.textContent = "お問い合わせを送信しています。";
+
+    try {
+
+      await fetch(GAS_URL, {
+
+        method: "POST",
+
+        mode: "no-cors",
+
+        headers: {
+
+          "Content-Type": "text/plain;charset=utf-8"
+
+        },
+
+        body: JSON.stringify(formData)
+
+      });
+
+      formStatus.textContent =
+
+        "送信処理を行いました。記録されたか、スプレッドシートを確認してください。";
+
+      contactForm.reset();
+
+    } catch (error) {
+
+      formStatus.textContent =
+
+        "送信できませんでした。時間をおいて再度お試しください。";
+
+    } finally {
+
+      submitButton.disabled = false;
+
+      submitButton.textContent = "送信する";
+
+    }
+
+  });
+
+</script>
 </body>
 
 </html>
